@@ -1,0 +1,32 @@
+<header fxLayout="row" fxLayoutAlign="start center">
+    <div fxFlex fxLayoutAlign="start end" fxLayoutGap="10">
+      <a href="/">
+        <img src="/assets/logo-ride-max.png" style="width: 300px">
+      </a>
+    </div>
+  <div fxLayoutGap="15" fxLayoutAlign="start center">
+    <button mat-raised-button color="primary" routerLink="/admin/login" (click)="logout()">Wyloguj</button>
+  </div>
+</header>
+<div fxLayout="row" fxFlex>
+    <div>
+        <div fxFlex class="sidebar">
+            <mat-selection-list [multiple]="false">
+                <mat-list-item><a routerLink="/admin">Dashboard</a></mat-list-item>
+                <mat-list-item>
+                    <a routerLink="/admin/orders">Zamówienia</a>
+                    <br>
+                    <span class="subMenuLink"> | <a routerLink="/admin/orders/export">Eksport</a></span>
+                </mat-list-item>
+                <mat-list-item><a routerLink="/admin/products">Produkty</a></mat-list-item>
+                <mat-list-item><a routerLink="/admin/categories">Kategorie</a></mat-list-item>
+                <mat-list-item><a routerLink="/admin/reviews">Opinie</a></mat-list-item>
+                <mat-list-item><a routerLink="/admin/orders/stats">Statystyki</a></mat-list-item>
+            </mat-selection-list>
+        </div>
+    </div>
+    <div fxFlex class="content">
+        <app-admin-message></app-admin-message>
+        <router-outlet></router-outlet>
+    </div>
+</div>
